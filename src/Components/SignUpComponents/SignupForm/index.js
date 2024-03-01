@@ -9,6 +9,7 @@ import { auth,db,storage } from '../../../firebase';
 import { doc,setDoc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import './style.css'
 
 const SignUpForm = () => {
     const [FullName, setFullName]=useState('');
@@ -34,7 +35,7 @@ const SignUpForm = () => {
             {
             try{
               //creating user acount
-              const userCredential=await createUserWithEmailAndPassword(
+              const userCredential = await createUserWithEmailAndPassword(
                 auth,
                 email,
                 password
@@ -68,7 +69,7 @@ const SignUpForm = () => {
             }
           }
           else {
-            if (password != confPass) {
+            if (password !== confPass) {
               toast.error(
                 "Please Make Sure your password and Confirm Password matches!"
               );
@@ -82,9 +83,10 @@ const SignUpForm = () => {
         };
   
   return (
-    <>
+    <div className='container'>
     
-         <InputComponent 
+        <div className='left'>
+        <InputComponent 
         state={FullName}
         setState={setFullName}
         placeholder='Full Name'
@@ -113,7 +115,10 @@ const SignUpForm = () => {
         required={true}
         />
         <Button text={loading ? "Loading...":"Signup"}  disabled={loading} onClick={handleSignUp}/>
-    </>
+
+        </div>
+
+    </div>
   )
 }
 

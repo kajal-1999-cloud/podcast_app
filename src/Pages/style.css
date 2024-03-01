@@ -1,21 +1,53 @@
-/* .custom-btn{
+
+.conatiner {
+  /* width: 80vw; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px auto;
+  margin-top: 4rem;
+}
+
+
+.right  img{
+  width: 420px;
+  height: 400px;
+  margin: 25px;
+  border-radius: 80%;
+
+}
+.right{
+  margin-top: 7rem;
+}
+.custom-btn{
     text-align: center;
     border:2px solid var(--white);
     padding:1rem;
     border-radius: 0.35rem;
     cursor: pointer;
-    width: 70vw;
+    width: 50vw;
     margin: 1rem;
     font-size: 1rem;
     font-weight: 500;
     background-color: transparent;
-} */
-/* .custom-btn:hover{
+}
+
+.input-wrapper {
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px auto;
+  margin-top: 4rem;
+}
+.input-wrapper h1{
+  text-align: center;
+}
+.custom-btn:hover{
     background-color: var(--white);
     color:var(--purple-grey);
     transition: all 0.2s;
-} */
-
+}
 .profileText{
     text-align: center;
     margin-top: 100px;
