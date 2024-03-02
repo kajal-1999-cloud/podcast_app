@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Header from "../Components/common/Header";
 import image from "../../src/assets/signup.png";
+import image1 from "../assets/download-removebg-preview.png";
 import SignUpForm from "../Components/SignUpComponents/SignupForm";
 import LoginForm from "../Components/SignUpComponents/LoginForm";
 
@@ -25,7 +26,7 @@ const SignUp = () => {
           )}
         </div>
         <div className="right">
-          <img src={image} alt="img..." />
+          <img src={image1} alt="img..." />
         </div>
       </div>
     </div>

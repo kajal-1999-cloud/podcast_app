@@ -5,7 +5,6 @@
 .right img{
     width: 400px;
     height: 400px;
-    margin: 25px;
     border-radius: 80%;
 }
 
@@ -25,15 +24,18 @@
 }
 
 .custom-input {
-    background-color: var(--theme);
+    /* background-color: var(--theme); */
     color: var(--white);
-    border: 2px solid var(--purple-grey);
-    border-radius: 0.35rem;
+    border: none;
+    border-bottom: 1px solid white;
+    /* border-radius: 0.35rem; */
     padding: 1rem;
     font-size: 1rem;
+    background-color: transparent;
     width: 50vw;
-    margin: 1rem;
+    margin-left: 3rem;
     font-weight: 500;
+    background-color: transparent !important;
 }
 
 

@@ -77,7 +77,7 @@ function CreatePodcastForm() {
   };
 
   return (
-    <>
+    <div>
       <InputComponent
         state={title}
         setState={setTitle}
@@ -111,7 +111,7 @@ function CreatePodcastForm() {
         disabled={loading}
         onClick={handleSubmit}
       />
-    </>
+    </div>
   );
 }
 

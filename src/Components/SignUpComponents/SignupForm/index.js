@@ -92,6 +92,7 @@ const SignUpForm = () => {
         placeholder='Full Name'
         type="text"
         required={true}
+        autocomplete="off"
         />
         <InputComponent 
         state={email}
@@ -99,6 +100,8 @@ const SignUpForm = () => {
         placeholder='Email'
         type="email"
         required={true}
+        style={{ backgroundColor: 'transparent' }}
+        autocomplete="off"
         />
         <InputComponent 
         state={password}
@@ -106,6 +109,7 @@ const SignUpForm = () => {
         placeholder='Password'
         type="password"
         required={true}
+        autocomplete="off"
         />
         <InputComponent 
         state={confPass}
@@ -113,6 +117,7 @@ const SignUpForm = () => {
         placeholder='Confirm Password'
         type="password"
         required={true}
+        autocomplete="off"
         />
         <Button text={loading ? "Loading...":"Signup"}  disabled={loading} onClick={handleSignUp}/>
 

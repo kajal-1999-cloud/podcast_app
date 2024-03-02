@@ -3,7 +3,8 @@
     justify-content: center;
     align-items: center;
     padding: 1.5rem;
-        font-size: 17px;
+    font-size: 17px;
+    margin-bottom: 3rem;
 }
 .links{
     display: flex;
@@ -12,7 +13,7 @@
     align-items: center;
 }
 .links a{
-    color:#8ea6bb;
+    color:#111213;
     text-decoration: none !important;
     font-weight:500;
 }
@@ -22,11 +23,11 @@
 }
 .gradient{
 position: absolute;
-width: 800px;
-height: 150px;
+width: 750px;
+height: 135px;
 margin:auto;
-background:var(--blue);
-filter: blur(100px);
+background:var( --carrot);
+filter: blur(120px);
 z-index: -1;
 top:-120px;
 }
