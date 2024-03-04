@@ -43,9 +43,9 @@ function PodcastsPage() {
   // ... Rest of the component code
 
   return (
-    <div>
+    <div className="podcast">
     <Header />
-    <div className="input-wrapper" style={{ marginTop: "2rem" }}>
+    <div className="podcast-wrapper" style={{ marginTop: "2rem" }}>
       <h1>Discover Podcasts</h1>
       <InputComponent
         state={search}

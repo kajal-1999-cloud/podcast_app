@@ -83,7 +83,7 @@ const SignUpForm = () => {
         };
   
   return (
-    <div className='container'>
+    <div className='container-signup'>
     
         <div className='left'>
         <InputComponent 

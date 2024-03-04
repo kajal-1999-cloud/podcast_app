@@ -77,7 +77,7 @@ function CreatePodcastForm() {
   };
 
   return (
-    <div>
+    <div className="createPodcast">
       <InputComponent
         state={title}
         setState={setTitle}

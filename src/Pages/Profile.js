@@ -26,7 +26,7 @@ const Profile = () => {
 
 
   return (
-    <div>
+    <div className='profile'>
       <Header />
       <br/>
       

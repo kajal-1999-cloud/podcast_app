@@ -1,15 +1,23 @@
 import React from "react";
 import Header from "../Components/common/Header";
 import CreatePodcastForm from "../Components/StartAPodcast/CreateApodcastForm";
+import image from "../../src/assets/signup.png";
 
 function CreateAPodcastPage() {
   return (
-    <div>
+    <div className="startAPodcast">
       <Header />
-      <div className="input-wrapper">
+      
+     <div className="createAPodcast">
+     <div className="createImage ">
+          {/* <img src={image} alt="img..." /> */}
+        </div>
+     <div className="input-wrapper">
         <h1>Create A Podcast</h1>
         <CreatePodcastForm />
       </div>
+      
+     </div>
     </div>
   );
 }
