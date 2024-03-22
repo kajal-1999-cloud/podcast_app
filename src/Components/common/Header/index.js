@@ -9,8 +9,8 @@ const Header = () => {
     <div className='nav'>
       <div className='gradient'></div>
           <div className='links'>
-            <Link to="/" className={currentPath=="/" ? "active" :"signup" } style={{color:"rgb(159, 166, 248)"}}>SignUp</Link>
-            <Link to="/home" className={currentPath=="/home" ? "active" :""}>home</Link>
+            <Link to="/signup" className={"signup" } style={{color:"rgb(159, 166, 248)"}}>SignUp</Link>
+            <Link to="/" className={currentPath=="/home" ? "active" :""}>home</Link>
             <Link to="/podcasts" className={currentPath=="/podcasts" ? "active" :""}>Podcast</Link>
             <Link to="/create-a-podcast" className={currentPath=="/create-a-podcast" ? "active" :""}>Start A Podcast</Link>
             <Link to="/profile" className={currentPath=="/profile" ? "active" :""}>Profile</Link>

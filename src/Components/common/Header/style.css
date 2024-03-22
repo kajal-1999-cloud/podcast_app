@@ -38,3 +38,6 @@ top:-120px;
 .active{
     color:var(--white) !important;
 }
+.signup::active{
+    color: rgb(140, 194, 245)
+}
