@@ -1,28 +1,30 @@
-import React from 'react'
-import { useState } from 'react';
-import InputComponent from '../../common/Input';
-import Button from '../../common/Button';
-import Header from '../../common/Header';
-import { signInWithEmailAndPassword,sendPasswordResetEmail } from 'firebase/auth';
-import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { auth, db } from '../../../firebase';
-import { doc, getDoc } from 'firebase/firestore';
-import { setUser } from '../../../slices/userSlice';
-import { toast } from 'react-toastify';
+import React from "react";
+import { useState } from "react";
+import InputComponent from "../../common/Input";
+import Button from "../../common/Button";
+import Header from "../../common/Header";
+import {
+  signInWithEmailAndPassword,
+  sendPasswordResetEmail,
+} from "firebase/auth";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { auth, db } from "../../../firebase";
+import { doc, getDoc } from "firebase/firestore";
+import { setUser } from "../../../slices/userSlice";
+import { toast } from "react-toastify";
 
 const LoginForm = () => {
-    
-    const [email,setEmail]=useState('')
-    const [password,setPassword]=useState('');
-    const [loading, setLoading] = useState(false);
-   
-    const dispatch= useDispatch()
-    const navigate= useNavigate()
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
 
-    const handleLogin=async()=>{
-     setLoading(true)
-     if (email && password) {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleLogin = async () => {
+    setLoading(true);
+    if (email && password) {
       try {
         const userCredential = await signInWithEmailAndPassword(
           auth,
@@ -54,58 +56,70 @@ const LoginForm = () => {
     } else {
       toast.error("Make sure email and password are not empty");
       setLoading(false);
-    } 
+    }
   };
-const handleForgetPass= async () => { 
-  setLoading(true); 
-  if (email) 
-  {
-     try{
-         await sendPasswordResetEmail(auth, email);
-          toast.success("Password reset email sent!");
-           setLoading(false);
-           }
-            catch (error)
-             {
-               console.error("Error sending password reset email:", error); 
-               toast.error(error.message); setLoading(false); 
-              }
-     }
-                else
-                 {
-                   toast.error("Please enter your registered  email address"); 
-                   setLoading(false); 
-                  } 
- };
-    
+  const handleForgetPass = async () => {
+    setLoading(true);
+    if (email) {
+      try {
+        await sendPasswordResetEmail(auth, email);
+        toast.success("Password reset email sent!");
+        setLoading(false);
+      } catch (error) {
+        console.error("Error sending password reset email:", error);
+        toast.error(error.message);
+        setLoading(false);
+      }
+    } else {
+      toast.error("Please enter your registered  email address");
+      setLoading(false);
+    }
+  };
 
   return (
     <>
-         
-        <InputComponent 
+      <InputComponent
         state={email}
         setState={setEmail}
-        placeholder='Email'
+        placeholder="Email"
         type="email"
         required={true}
-        />
-        <InputComponent 
+      />
+      <InputComponent
         state={password}
-       setState={setPassword}
-        placeholder='Password'
+        setState={setPassword}
+        placeholder="Password"
         type="password"
         required={true}
-        />
-        
-       <div className="forgot" style={{display:"flex",flexDirection:"row-reverse",justifyContent:"flex-end",alignItems:"end" ,  cursor:"pointer",textDecoration:"underline",textAlign:"right",width:"120px",fontSize:"16px",marginTop:"10px",marginBottom:"10px"}} onClick={handleForgetPass}>Forgot password ?</div>
-       
-       <Button
+      />
+
+      <div
+        className="forgot"
+        style={{
+          display: "flex",
+          flexDirection: "row-reverse",
+          justifyContent: "flex-end",
+          alignItems: "end",
+          cursor: "pointer",
+          textDecoration: "underline",
+          textAlign: "right",
+          width: "120px",
+          fontSize: "16px",
+          marginTop: "10px",
+          marginBottom: "10px",
+        }}
+        onClick={handleForgetPass}
+      >
+        Forgot password ?
+      </div>
+
+      <Button
         text={loading ? "Loading..." : "Login"}
         onClick={handleLogin}
         disabled={loading}
       />
     </>
-  )
-}
+  );
+};
 
 export default LoginForm;

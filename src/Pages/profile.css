@@ -1,0 +1,129 @@
+.profilePhoto{
+width: 50px;;
+height: 50px;
+border-radius: 50px;
+} 
+
+
+.profileText {
+  text-align: center;
+  margin-top: 100px;
+  align-items: center;
+  color: black;
+  backdrop-filter: blur(10px);
+  background-color: hsla(200, 3%, 17%, 0.241);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  margin: 80px auto auto;
+  padding: 50px;
+  width: 50%;
+}
+.profileText:hover {
+  background-color: rgba(67, 70, 78, 0.293);
+  --glow-color: rgb(217, 176, 255);
+  --glow-spread-color: rgba(191, 123, 255, 0.781);
+  --enhanced-glow-color: rgb(231, 206, 255);
+  --btn-color: rgb(100, 61, 136);
+}
+.btnChnge {
+  background-color: transparent;
+  border: 2px solid blackwhite;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 0.35rem;
+  cursor: pointer;
+  width: 25vw;
+  margin: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.btnChnge:hover {
+  background-color: var(--white);
+  color: var(--purple-grey);
+  transition: all 0.2s;
+}
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+
+:root {
+  --card-height: 65vh;
+  --card-width: calc(var(--card-height) / 1.5);
+}
+
+.profileText:hover {
+  color: rgb(255, 255, 255);
+  background-image: linear-gradient(
+    var(--rotate),
+    #5ddcff,
+    #5185c0 43%,
+    #145880
+  );
+  transition: color 1s;
+
+  background-image: linear-gradient(
+    var(--rotate),
+    #5ddcff,
+    #5185c0 43%,
+    #145880
+  );
+}
+.profileText:hover:before,
+.profileText:hover:after {
+  animation: none;
+  opacity: 0;
+}
+
+.profileText::before {
+  content: "";
+  width: 104%;
+  height: 102%;
+  border-radius: 8px;
+  background-image: linear-gradient(
+    var(--rotate),
+    #d9dddf,
+    #6ba9db 50%,
+    #3f9fbd
+  );
+  position: absolute;
+  z-index: -1;
+  top: -1%;
+  left: -2%;
+  animation: spin 2.5s linear infinite;
+}
+
+.profileText::after {
+  position: absolute;
+  content: "";
+  top: calc(var(--card-height) / 6);
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  transform: scale(0.8);
+  filter: blur(calc(var(--card-height) / 6));
+  background-image: linear-gradient(
+    var(--rotate),
+    #d1dcdf,
+    #6ba9db 50%,
+       #56bad8
+
+  );
+  opacity: 1;
+  transition: opacity 0.5s;
+  animation: spin 2.5s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
+}

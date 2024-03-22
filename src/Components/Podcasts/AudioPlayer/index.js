@@ -13,6 +13,7 @@ function AudioPlayer({ audioSrc, image }) {
   const handleDuration = (e) => {
     setCurrentTime(e.target.value);
     audioRef.current.currentTime = e.target.value;
+    
   };
 
   const togglePlay = () => {
@@ -47,7 +48,7 @@ function AudioPlayer({ audioSrc, image }) {
     audio.addEventListener("timeupdate", handleTimeUpdate);
     audio.addEventListener("loadedmetadata", handleLoadedMetadata);
     audio.addEventListener("ended", handleEnded);
-
+console.log(audioRef);
     return () => {
       audio.removeEventListener("timeupdate", handleTimeUpdate);
       audio.removeEventListener("loadedmetadata", handleLoadedMetadata);

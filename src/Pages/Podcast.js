@@ -40,7 +40,6 @@ function PodcastsPage() {
       item.title.trim().toLowerCase().includes(search.trim().toLowerCase())
   );
 
-  // ... Rest of the component code
 
   return (
     <div className="podcast">

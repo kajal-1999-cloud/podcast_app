@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import SignUpPage from './Pages/SignUpPage';
+import Home from './Pages/home';
 import Profile from "./Pages/Profile";
 import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
@@ -58,6 +59,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<SignUpPage />} />
+          <Route path="/home" element={<Home />} />
           <Route element={<PrivateRoutes />}>
             <Route path="/profile" element={<Profile />} />
             <Route path="/create-a-podcast" element={<CreateAPodcastPage/>}/>

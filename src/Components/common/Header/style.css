@@ -17,6 +17,9 @@
     text-decoration: none !important;
     font-weight:500;
 }
+.links .signup{
+    color: rgb(159, 166, 248)
+}
 .links a:hover{
     color: var(--white);
     transition: all 0.3s;

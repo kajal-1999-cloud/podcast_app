@@ -6,17 +6,22 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { useDispatch } from 'react-redux';
 import { setUser } from '../../../slices/userSlice';
 import { auth,db,storage } from '../../../firebase';
-import { doc,setDoc } from 'firebase/firestore';
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
+import { addDoc, collection, doc,setDoc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import './style.css'
+import FileInput from '../../common/Input/FileInput';
+import { upload } from '@testing-library/user-event/dist/upload';
 
 const SignUpForm = () => {
     const [FullName, setFullName]=useState('');
     const [email,setEmail]=useState('')
     const [password,setPassword]=useState('');
     const [confPass,setConfPass]=useState('')
-   const[loading,setLoading]=useState(false)
+    const [profilePhoto,setProfilePhoto]=useState('')
+
+    const[loading,setLoading]=useState(false)
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
@@ -30,24 +35,33 @@ const SignUpForm = () => {
               password == confPass &&
               password.length >= 6 &&
               FullName &&
-              email
+              email && profilePhoto
             ) 
             {
             try{
+              // storing photo in storage
+              const profileImageRef = ref(
+                storage,
+                `profile/${auth.currentUser.uid}${Date.now()}`
+              );
+              await uploadBytes(profileImageRef, profilePhoto)
+          const profileImageUrl = await getDownloadURL(profileImageRef )
+
               //creating user acount
               const userCredential = await createUserWithEmailAndPassword(
                 auth,
                 email,
                 password
+                
               );
               const user = userCredential.user;
-              console.log("user", user);
               //saving user details
-              
+
               await setDoc(doc(db,"users",user.uid),{
                 name:FullName,
                 email:user.email,
                 uid:user.uid,
+                profileImage:profileImageUrl
               });
               //save data nd call redux
               
@@ -56,8 +70,10 @@ const SignUpForm = () => {
                   name:FullName,
                   email:user.email,
                   uid:user.uid,
+                  profileImage:profileImageUrl
                 })
               )
+              console.log("user", user);
               toast.success("User has been created!");
               setLoading(false);
               navigate("/Profile");
@@ -81,6 +97,9 @@ const SignUpForm = () => {
             setLoading(false);
           }
         };
+        function profileImageFunc(files){
+          setProfilePhoto(files)
+        }
   
   return (
     <div className='container-signup'>
@@ -105,7 +124,7 @@ const SignUpForm = () => {
         />
         <InputComponent 
         state={password}
-       setState={setPassword}
+        setState={setPassword}
         placeholder='Password'
         type="password"
         required={true}
@@ -113,12 +132,18 @@ const SignUpForm = () => {
         />
         <InputComponent 
         state={confPass}
-       setState={setConfPass}
+        setState={setConfPass}
         placeholder='Confirm Password'
         type="password"
         required={true}
         autocomplete="off"
         />
+    <FileInput
+        accept={"image/*"}
+        id="upload-profile-image"
+        fileHandleFnc={profileImageFunc}
+        text={"Upload profile image"}
+      />
         <Button text={loading ? "Loading...":"Signup"}  disabled={loading} onClick={handleSignUp}/>
 
         </div>

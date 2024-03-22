@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Header from "../Components/common/Header";
-import image1 from "../assets/img.jpg";
+import Logo from "../assets/logo.png";
 import SignUpForm from "../Components/SignUpComponents/SignupForm";
 import LoginForm from "../Components/SignUpComponents/LoginForm";
-
+import './style.css'
 const SignUp = () => {
   const [flag, setFlag] = useState(false);
 
@@ -11,10 +11,11 @@ const SignUp = () => {
     <div>
       <Header />
       <div className="signup-page">
-        <div >
+       
           <div className="heading">
-          <img className='logo'src='../assets/logo.png' alt=''/>
-          {!flag ? <h1>Sign Up</h1> : <h1>Login</h1>}
+          
+          <img className='logo'src={Logo} alt=''/>
+          {!flag ? <h2>Sign Up</h2> : <h2>Login</h2>}
 
           </div>
         <div className="signup-wrapper">
@@ -31,7 +32,6 @@ const SignUp = () => {
         </div>
         </div>
        
-      </div>
     </div>
   );
 };

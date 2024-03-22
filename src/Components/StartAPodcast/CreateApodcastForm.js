@@ -7,7 +7,7 @@ import Button from "../common/Button";
 import FileInput from "../common/Input/FileInput";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { auth, db, storage } from "../../firebase";
-import { addDoc, collection, doc, setDoc } from "firebase/firestore";
+import { addDoc, collection } from "firebase/firestore";
 
 function CreatePodcastForm() {
   const [title, setTitle] = useState("");
@@ -16,8 +16,8 @@ function CreatePodcastForm() {
   const [bannerImage, setBannerImage] = useState();
 
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
+  // const navigate = useNavigate();
+  // const dispatch = useDispatch();
 
   const handleSubmit = async () => {
     if (title && desc && displayImage && bannerImage) {
@@ -37,7 +37,6 @@ function CreatePodcastForm() {
           `podcasts/${auth.currentUser.uid}/${Date.now()}`
         );
         await uploadBytes(displayImageRef, displayImage);
-
         const displayImageUrl = await getDownloadURL(displayImageRef);
         const podcastData = {
           title: title,
@@ -48,12 +47,14 @@ function CreatePodcastForm() {
         };
 
         const docRef = await addDoc(collection(db, "podcasts"), podcastData);
+
         setTitle("");
         setDesc("");
         setBannerImage(null);
         setDisplayImage(null);
         toast.success("Podcast Created!");
         setLoading(false);
+
       } catch (e) {
         toast.error(e.message);
         console.log(e);
