@@ -9,7 +9,7 @@ function Home() {
   const navigate = useNavigate();
 
   function signupPage(){
-    navigate('/')
+    navigate('/signup')
   }
 
   return (

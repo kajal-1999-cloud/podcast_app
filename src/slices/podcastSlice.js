@@ -5,7 +5,7 @@ podcasts:[]
 };
 
 const podcastSlice=createSlice({
-    name:"user",
+    name:"podcast",
     initialState,
     reducers:{
         setPodcasts:(state,action)=>{

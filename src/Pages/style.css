@@ -98,6 +98,20 @@ color: #fad0a1;
   backdrop-filter: blur(6px);
 }
 
+.podcastCards {
+  display: flex;
+ 
+}
+
+.podcastCardsContainer {
+  overflow-x: auto;
+}
+
+.PodcastCard {
+  /* Your PodcastCard styles */
+  flex: 0 0 auto; /* Ensure each card takes its content size */
+  margin-right: 10px; /* Adjust spacing between cards */
+}
 .profile {
   /* background-image: url("../assets/img4.jpg"); */
   background-size: cover;
@@ -151,6 +165,7 @@ color: #fad0a1;
   text-align: center;
 }
 
+
 .signup-page .heading{
 display: flex;
 justify-content: center;
@@ -177,4 +192,18 @@ input:-webkit-autofill:active {
   background-color: var(--white);
   color: var(--purple-grey);
   transition: all 0.2s;
+}
+
+
+
+.podcastDetails .podcastDescription{
+background-color: rgba(16, 39, 75, 0.938);
+opacity: 0.9;
+color: rgb(250, 244, 244);
+display: flex;
+margin: 15px;
+padding: 5px 15px;
+border-radius: 10px;
+justify-content: space-between;
+width: 100%;
 }

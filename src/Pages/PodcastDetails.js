@@ -26,11 +26,14 @@ function PodcastDetailsPage() {
   const getData = async () => {
     try {
       const docRef = doc(db, "podcasts", id);
+      
       const docSnap = await getDoc(docRef);
-
+console.log("docsnap -->",docSnap)
       if (docSnap.exists()) {
         console.log("Document data:", docSnap.data());
         setPodcast({ id: id, ...docSnap.data() });
+        console.log("podcastDetaillls:", podcast);
+
       } else {
         // docSnap.data() will be undefined in this case
         console.log("No such Podcast!");
@@ -50,6 +53,7 @@ function PodcastDetailsPage() {
         querySnapshot.forEach((doc) => {
           episodesData.push({ id: doc.id, ...doc.data() });
         });
+        console.log("epi",episodesData)
         setEpisodes(episodesData);
       },
       (error) => {
@@ -63,7 +67,7 @@ function PodcastDetailsPage() {
   }, [id]);
 
   return (
-    <div>
+    <div className="podcastDetails">
       <Header />
       <div className="input-wrapper" style={{ marginTop: "0rem" }}>
         {podcast.id && (
@@ -92,7 +96,10 @@ function PodcastDetailsPage() {
             <div className="banner-wrapper">
               <img src={podcast.bannerImage} />
             </div>
-            <p className="podcast-description">{podcast.description}</p>
+            <div  className="podcastDescription">
+            <p>Description : {podcast.description}</p>
+
+            </div>
             <h1 className="podcast-title-heading ">Episodes</h1>
             {episodes.length > 0 ? (
               <>

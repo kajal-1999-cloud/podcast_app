@@ -2,15 +2,16 @@ import React, { useEffect, useState } from "react";
 import Header from "../Components/common/Header";
 import { useDispatch, useSelector } from "react-redux";
 import { collection, onSnapshot, query } from "firebase/firestore";
-import { db } from "../firebase";
+import { db , auth} from "../firebase";
 import { setPodcasts } from "../slices/podcastSlice";
 import PodcastCard from "../Components/Podcasts/PodcastCard";
 import InputComponent from "../Components/common/Input";
 
 function PodcastsPage() {
   const dispatch = useDispatch();
-  const podcasts = useSelector((state) => state.podcast.podcasts); // Fix the selector here
-
+  const podcasts = useSelector((state) => state.podcast.podcasts); 
+  const user = useSelector(state => state.user.user)
+console.log("u",user)
   const [search, setSearch] = useState("");
 
   useEffect(() => {
@@ -22,6 +23,7 @@ function PodcastsPage() {
           podcastsData.push({ id: doc.id, ...doc.data() });
         });
         dispatch(setPodcasts(podcastsData));
+        console.log("pod",podcastsData)
       },
       (error) => {
         console.error("Error fetching podcasts:", error);
@@ -33,6 +35,7 @@ function PodcastsPage() {
     };
   }, [dispatch]);
 
+  
   console.log(podcasts);
 
   var filteredPodcasts = podcasts.filter(
@@ -53,7 +56,9 @@ function PodcastsPage() {
         type="text"
       />
 
-      {filteredPodcasts.length > 0 ? (
+     <div className="cards container">
+    <div  className="podcastCards">
+    {filteredPodcasts.length > 0 ? (
         <div className="podcasts-flex" style={{ marginTop: "1.5rem" }}>
           {filteredPodcasts.map((item) => {
             return (
@@ -62,6 +67,7 @@ function PodcastsPage() {
                 id={item.id}
                 title={item.title}
                 displayImage={item.displayImage}
+                // username={user.uid == auth.currentUser.uid && user.name}
               />
             );
           })}
@@ -69,6 +75,8 @@ function PodcastsPage() {
       ) : (
         <p>{search ? "Podcast Not Found" : "No Podcasts On The Platform"}</p>
       )}
+    </div>
+     </div>
     </div>
   </div>
 );

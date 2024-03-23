@@ -1,16 +1,10 @@
-.profilePhoto{
-width: 50px;;
-height: 50px;
-border-radius: 50px;
-} 
-.profile{
-  /* box-shadow: inset 0px 0px 15px 10px rgba(120, 114, 122, 0.75); */
 
-}
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 .profileText {
   text-align: center;
-  margin-top: 80px;
+  /* margin-top: 30px; */
+  justify-content: center;
   align-items: center;
   color: black;
   backdrop-filter: blur(10px);
@@ -18,11 +12,57 @@ border-radius: 50px;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
-  margin: 50px auto auto;
-  padding: 50px;
-  width: 50%;
+  margin: 5px  auto;
+  padding: 20px;
+  width: 80%;
+  height: 80%;
+  
 
 }
+.profileText .user h4{
+  font-weight: 500;
+  line-height: 30px;
+  word-spacing: 12px;
+  color: rgb(26, 25, 25);
+  padding: 10px 40px;
+  background-color: #5185c0;
+  background: linear-gradient(to right, #b0cdfaef,  #52b6d4c0);
+  border-radius: 10px;
+  box-shadow: 0px -5px 0px  rgba(85, 94, 158, 0.788);
+ margin:20px;
+}
+.profileText .heading{
+    margin-bottom: 30px;
+  word-spacing: 15px;
+  padding: 3px 60%;
+    border-radius: 20px;
+  /* color: white; */
+  box-shadow: 0px 10px 17px  rgba(7, 15, 78, 0.788);
+  font-weight: 500;
+  line-height: 50px;
+
+  }
+  .photoDiv{
+    text-align: center;
+  }
+.profileText .user{
+  text-align: center;
+  gap: 20px;
+  align-items: center;
+  text-align: start;
+  margin: 10px;
+  width: 50%;
+}
+.profilePhoto{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 1px solid white;
+  margin: 5px;
+  box-shadow: 0px 10px 17px  rgba(214, 216, 231, 0.788);
+
+  } 
+ 
 .profileText:hover {
   background-color: rgba(67, 70, 78, 0.293);
   --glow-color: rgb(217, 176, 255);
@@ -31,20 +71,26 @@ border-radius: 50px;
   --btn-color: rgb(100, 61, 136);
 }
 .btnChnge {
-  background-color: transparent;
   border: 2px solid blackwhite;
   text-align: center;
-  padding: 1rem;
-  border-radius: 0.35rem;
+  padding: 1rem 3rem;
+  border-radius: 0.3rem;
+  text-decoration: none;
   cursor: pointer;
-  width: 25vw;
+  width: 55vw;
   margin: 1rem;
   font-size: 1rem;
   font-weight: 500;
+  background-color: transparent;
+ 
+/* border: 0.3px solid grey; */
 }
 .btnChnge:hover {
-  background-color: var(--white);
   color: var(--purple-grey);
+  box-shadow: 0px 0px 10px  rgba(59, 60, 66, 0.788);
+  background-color: var(--white);
+
+  color: black;
   transition: all 0.2s;
 }
 @property --rotate {

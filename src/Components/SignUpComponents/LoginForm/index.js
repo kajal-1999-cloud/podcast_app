@@ -42,11 +42,12 @@ const LoginForm = () => {
             name: userData.name,
             email: user.email,
             uid: user.uid,
+            profileImage:userData.profileImage
           })
         );
         toast.success("Login Successful!");
         setLoading(false);
-        navigate("/profile");
+        navigate(`/profile/${user.uid}`);
         // Navigate to the profile page
       } catch (error) {
         console.error("Error signing in:", error);
