@@ -14,7 +14,7 @@
   flex-direction: column;
   margin: 5px  auto;
   padding: 20px;
-  width: 80%;
+  width: 60%;
   height: 80%;
   
 
@@ -34,7 +34,7 @@
 .profileText .heading{
     margin-bottom: 30px;
   word-spacing: 15px;
-  padding: 3px 60%;
+  padding: 3px 50%;
     border-radius: 20px;
   /* color: white; */
   box-shadow: 0px 10px 17px  rgba(7, 15, 78, 0.788);
@@ -108,16 +108,16 @@
   color: rgb(255, 255, 255);
   background-image: linear-gradient(
     var(--rotate),
-    #5ddcff,
-    #5185c0 43%,
+    #b5e0ece3,
+    #5185c0ea 43%,
     #145880
   );
   transition: color 1s;
 
   background-image: linear-gradient(
     var(--rotate),
-    #5ddcff,
-    #5185c0 43%,
+    #b5e0ece3,
+    #5185c0ea 43%,
     #145880
   );
 }
@@ -134,9 +134,9 @@
   border-radius: 8px;
   background-image: linear-gradient(
     var(--rotate),
-    #d9dddf,
-    #6ba9db 50%,
-    #3f9fbd
+    #b5e0ece3,
+    #5185c0ea 43%,
+    #145880
   );
   position: absolute;
   z-index: -1;
@@ -159,9 +159,9 @@
   filter: blur(calc(var(--card-height) / 6));
   background-image: linear-gradient(
     var(--rotate),
-    #d1dcdf,
-    #6ba9db 50%,
-       #56bad8
+    #b5e0ece3,
+    #5185c0ea 43%,
+    #145880c7
 
   );
   opacity: 1;
