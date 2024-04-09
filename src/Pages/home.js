@@ -19,7 +19,6 @@ function Home() {
     
         <div className="intro">
        <div>
-     
         <img className="cover" src={image} alt="" />
        </div>
           <div className="para">
