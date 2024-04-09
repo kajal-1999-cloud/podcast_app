@@ -78,7 +78,8 @@
   text-decoration: none;
   cursor: pointer;
   width: 55vw;
-  margin: 1rem;
+  margin: 1.2rem;
+  margin-left: 1rem;
   font-size: 1rem;
   font-weight: 500;
   background-color: transparent;
@@ -176,4 +177,31 @@
   100% {
     --rotate: 360deg;
   }
+}
+
+@media only screen and (max-width: 768px) {
+  .profileText {
+    width: 90%;
+    height: auto; 
+    padding: 10px; 
+  }
+
+  .profileText .heading {
+    padding: 10px 30%;
+    line-height: 40px; 
+  }
+
+  .profileText .user {
+    width: 100%;
+  }
+
+  .profilePhoto {
+    width: 80px; 
+    height: 80px; 
+  }
+
+  .btnChnge {
+    width: 80vw; 
+  }
+
 }

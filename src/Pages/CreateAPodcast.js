@@ -9,9 +9,6 @@ function CreateAPodcastPage() {
       <Header />
       
      <div className="createAPodcast">
-     <div className="createImage ">
-          {/* <img src={image} alt="img..." /> */}
-        </div>
      <div className="input-wrapper">
         <h1>Create A Podcast</h1>
         <CreatePodcastForm />

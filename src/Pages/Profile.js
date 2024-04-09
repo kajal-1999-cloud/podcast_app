@@ -12,7 +12,6 @@ const Profile = () => {
   const { id } = useParams();
 
   const [users, setUsers] = useState({});
-  console.log("ID", id);
 
   const getData = async () => {
     try {
@@ -21,7 +20,6 @@ const Profile = () => {
       const docSnap = await getDoc(docRef);
 
       if (docSnap.exists()) {
-        console.log("Document data:", docSnap.data());
         setUsers({ id: id, ...docSnap.data() });
       } else {
         // docSnap.data() will be undefined in this case
@@ -70,7 +68,7 @@ const Profile = () => {
         </div>
 
         <button text={"logout"} onClick={handleLogout} className="btnChnge">
-          Logout
+          <h4>Logout</h4>
         </button>
       </div>
     </div>

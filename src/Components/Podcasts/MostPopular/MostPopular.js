@@ -5,13 +5,17 @@ import { FaGooglePlay } from "react-icons/fa";
 import { FaPlayCircle } from "react-icons/fa";
 // import { GoTriangleRight } from "react-icons/go";
 
-function EpisodeDetails({ index, title, description, audioFile, onClick }) {
+function MostPopular({ index, title, description, audioFile, onClick }) {
+
+
+  
   return (
-    <div style={{ width: "100%" }} className="episode-details">
-      <div>
-        <h1 style = {{ textAlign: "left", marginBottom: 0 }} >
-          {index}. {title}
-        </h1>
+   <div className="mostPopular">
+     <div style={{ width: "100%" }} className="popular-details">
+      <div className="">
+        <h3 style = {{ textAlign: "left", marginBottom: 0 }} >
+           {title}
+        </h3>
         <p style={{ marginLeft: "1.5rem" }} className="podcast-description ">
           {description}
         </p>
@@ -26,7 +30,8 @@ function EpisodeDetails({ index, title, description, audioFile, onClick }) {
         <FaPlayCircle   className="logo" style={{}} />
       </button>
     </div>
+   </div>
   );
 }
 
-export default EpisodeDetails;
+export default MostPopular;

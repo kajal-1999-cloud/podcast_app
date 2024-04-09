@@ -16,7 +16,6 @@ function PodcastDetailsPage() {
   const [episodes, setEpisodes] = useState([]);
   const [playingFile, setPlayingFile] = useState("");
 
-  console.log("ID", id);
   useEffect(() => {
     if (id) {
       getData();
@@ -28,12 +27,8 @@ function PodcastDetailsPage() {
       const docRef = doc(db, "podcasts", id);
       
       const docSnap = await getDoc(docRef);
-console.log("docsnap -->",docSnap)
       if (docSnap.exists()) {
-        console.log("Document data:", docSnap.data());
         setPodcast({ id: id, ...docSnap.data() });
-        console.log("podcastDetaillls:", podcast);
-
       } else {
         // docSnap.data() will be undefined in this case
         console.log("No such Podcast!");
@@ -53,7 +48,6 @@ console.log("docsnap -->",docSnap)
         querySnapshot.forEach((doc) => {
           episodesData.push({ id: doc.id, ...doc.data() });
         });
-        console.log("epi",episodesData)
         setEpisodes(episodesData);
       },
       (error) => {
@@ -70,6 +64,7 @@ console.log("docsnap -->",docSnap)
     <div className="podcastDetails">
       <Header />
       <div className="input-wrapper" style={{ marginTop: "0rem" }}>
+        {/* banner section  */}
         {podcast.id && (
           <>
             <div
@@ -98,6 +93,7 @@ console.log("docsnap -->",docSnap)
             </div>
             <div  className="podcastDescription">
             <p>Description : {podcast.description}</p>
+           {/* {podcast.createdBy == auth.currentUser.uid &&  <p>Podcast Created By : {}</p>} */}
 
             </div>
             <h1 className="podcast-title-heading ">Episodes</h1>

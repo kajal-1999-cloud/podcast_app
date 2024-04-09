@@ -27,7 +27,7 @@ function CreateAnEpisodePage() {
 
   const handleSubmit = async () => {
     setLoading(true);
-    if ((title, desc, audioFile, id)) {
+    if(title && desc && audioFile && id) {
       try {
         const audioRef = ref(
           storage,
@@ -41,8 +41,8 @@ function CreateAnEpisodePage() {
           description: desc,
           audioFile: audioURL,
         };
-
         await addDoc(collection(db, "podcasts", id, "episodes"), episodeData);
+        await addDoc(collection(db, "episodes"), episodeData);
         toast.success("Episode Created Successfully");
         setLoading(false);
         navigate(`/podcast/${id}`);

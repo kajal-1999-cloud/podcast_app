@@ -31,7 +31,6 @@ function CreatePodcastForm() {
         await uploadBytes(bannerImageRef, bannerImage);
 
         const bannerImageUrl = await getDownloadURL(bannerImageRef);
-
         const displayImageRef = ref(
           storage,
           `podcasts/${auth.currentUser.uid}/${Date.now()}`
@@ -53,6 +52,7 @@ function CreatePodcastForm() {
         setBannerImage(null);
         setDisplayImage(null);
         toast.success("Podcast Created!");
+        window.location.href = "/podcasts"
         setLoading(false);
 
       } catch (e) {

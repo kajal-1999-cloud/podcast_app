@@ -8,14 +8,17 @@
   height: 100%;
   backdrop-filter: blur(5px);
   background-color: black;
+  background-attachment: fixed; 
+  overflow-y: auto;
 }
 .home {
   background-image: url("../assets/download.jpg");
   background-size: cover;
   background-position: center;
-  /* backdrop-filter: blur(16px); */
   width: 100vw;
   height: 100vh;
+  background-attachment: fixed; 
+  overflow-y: auto;
 }
 .home .intro { 
   display: flex;
@@ -26,12 +29,11 @@
   padding: 20px;
   margin: 25px;
   gap: 40px;
-  /* box-shadow: 10px 10px 10px rgba(192, 57, 57, 0.5); */
   border-radius: 20px;
 }
 .home .cover {
-  width: 500px;
-  height: 400px;
+  width: 29rem;
+  height: 29rem;
   border-radius: 20%;
 }
 .home .logo {
@@ -44,13 +46,11 @@
   align-items: center;
   justify-content: center;
   gap: 20px;
-  /* padding: 10px; */
 }
 .home h4 {
   font-family: "MedievalSharp", sans-serif;
   font-weight: 600;
   font-size: 30px;
-  /* text-align: ; */
   box-shadow: 10px 10px 10px rgba(192, 57, 57, 0.5);
   border-radius: 10px;
 }
@@ -60,19 +60,15 @@
   font-weight: 600;
   font-size: 30px;
   text-align: start;
-  /* box-shadow: 10px 10px 10px rgba(192, 57, 57, 0.5); */
   border-radius: 10px;
 }
 
 .home p {
-  /* font-family: "Frijole", sans-serif ; */
   padding: 20px;
   text-align: start;
   font-weight: 400;
   font-size: 20px;
   word-spacing: 3px;
-  /* text-align: ; */
-  /* box-shadow: 10px 10px 10px rgba(192, 57, 57, 0.5); */
   border-radius: 10px;
 }
 .home span{
@@ -88,19 +84,16 @@ color: #fad0a1;
 }
 .podcast {
   background-color: rgb(17, 17, 17);
-  /* background-image: url("../assets/download5.jpg"); */
   background-size: cover;
   background-position: center;
-  /* background-color: #f0f0f0; */
   box-shadow: inset 0px 0px 15px 10px rgba(120, 114, 122, 0.75);
-  /* width:100vw; */
-  /* height: 100%; */
   backdrop-filter: blur(6px);
 }
-
+.podcast h1{
+  margin: .5rem;
+}
 .podcastCards {
   display: flex;
- 
 }
 
 .podcastCardsContainer {
@@ -108,12 +101,10 @@ color: #fad0a1;
 }
 
 .PodcastCard {
-  /* Your PodcastCard styles */
-  flex: 0 0 auto; /* Ensure each card takes its content size */
-  margin-right: 10px; /* Adjust spacing between cards */
+  flex: 0 0 auto; 
+  margin-right: 10px;
 }
 .profile {
-  /* background-image: url("../assets/img4.jpg"); */
   background-size: cover;
   background-position: center;
   width: 100vw;
@@ -125,23 +116,18 @@ color: #fad0a1;
   background-image: url("../assets/signup.png");
   background-size: cover;
   background-position: center;
-  width: 70vw;
+  /* width: 70vw; */
   height: 100vh;
   backdrop-filter: blur(5px);
   background-color: black;
-  margin-left: 10rem;
+  margin: 0rem 11rem;
 }
 
-.createAPodcast img {
-  width: 400px;
-  height: 400px;
-  border-radius: 80%;
-}
+
 .createAPodcast {
   display: flex;
   align-items: center;
   justify-content: center;
-  justify-content: space-around;
 }
 
 .signup-wrapper {
@@ -206,4 +192,80 @@ padding: 5px 15px;
 border-radius: 10px;
 justify-content: space-between;
 width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  .createAPodcast{
+    margin: 0rem 3.5rem;
+  }
+.home{
+  margin: 0px;
+}
+ 
+  .home .intro { 
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+    padding: 5px 10px;
+    margin: 10px;
+    gap: 12px ;
+    border-radius: 2px;
+  }
+  .home .cover {
+    width: 20rem;
+    height: 14rem;
+    border-radius: 2px;
+    margin-top: 0px;
+    padding: 0px;
+  }
+  .home .logo {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50px;
+  }
+   .logo-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+  .home h4 {
+    font-family: "MedievalSharp", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    box-shadow: 10px 10px 10px rgba(192, 57, 57, 0.5);
+    border-radius: 10px;
+  }
+  
+  .home h5 {
+    font-weight: 400;
+    font-size: 20px;
+    /* padding: 1px 55px; */
+    text-align: center;
+    border-radius: 10px;
+  }
+  
+  .home p {
+    padding: 1px 12px;
+    text-align: center;
+    font-weight: 300;
+    font-size: 12px;
+  }
+ 
+  .home button{
+    margin-top: -12px;
+  }
+  .signup-wrapper {
+  text-align: center;
+    opacity: 0.8;
+    background-color: black;
+    width: 90vw;
+    margin: 1rem;
+    gap: .1rem;
+    border-radius: 10px;
+    box-shadow: 10px 7px 10px 6px rgba(22, 20, 20, 0.8);
+    margin: auto;
+  }
 }

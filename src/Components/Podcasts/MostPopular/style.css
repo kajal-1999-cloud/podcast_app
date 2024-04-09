@@ -1,0 +1,36 @@
+.popular-details{
+ display: flex;
+ justify-content: space-between;
+    align-items: center;
+    background-color: rgb(43, 41, 41);
+  background-color: rgb(17, 17, 17);
+    padding: 0.1rem 1rem;
+    opacity: 0.9;
+    margin: .8rem;
+    color: rgb(214, 212, 212);
+
+}
+.popular-details:hover{
+    border-radius: 1px solid rgb(202, 202, 202);
+}
+.popular-details p, .popular-details h1{
+    word-spacing: 5px;
+}
+.popular-details .button{
+    border: 1px solid rgb(31, 29, 29);
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    margin-right: 2rem;
+    background-color: rgb(235, 219, 219);
+}
+.popular-details .button .logo{
+     
+    width: 3rem;
+    height: 3rem;
+    margin:-1rem;
+}
+.mostPopular{
+    margin:0.3rem 3rem;
+    margin-right: 12rem;
+}

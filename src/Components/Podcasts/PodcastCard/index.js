@@ -8,7 +8,6 @@ function PodcastCard({ id, title, displayImage, username }) {
       <div className="podcast-card">
         <img className="display-image-podcast" src={displayImage} alt='' />
         <p className="title-podcast">{title}</p>
-           {/* {username &&  <p>Podcast Created By : {username}</p>} */}
 
       </div>
     </Link>
