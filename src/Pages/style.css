@@ -93,9 +93,17 @@ color: #fad0a1;
   margin: .5rem;
 }
 .podcastCards {
+  zoom: .9;
+  /* height: 300px; */
+  /* overflow-y: scroll; */
+  /* scrollbar-width: thin; */
+ 
   display: flex;
 }
 
+.popular-podcast{
+  margin-top: 3rem;
+}
 .podcastCardsContainer {
   overflow-x: auto;
 }
@@ -129,7 +137,9 @@ color: #fad0a1;
   align-items: center;
   justify-content: center;
 }
+.signup-page{
 
+}
 .signup-wrapper {
   display: flex;
   flex-direction: column;
@@ -142,10 +152,11 @@ color: #fad0a1;
   background-color: black;
   width: 65vw;
   margin: 3rem;
-  gap: 3rem;
+  gap: 2rem;
   border-radius: 10px;
   box-shadow: 10px 7px 10px 6px rgba(22, 20, 20, 0.8);
   margin: auto;
+  zoom: .9;
 }
 .signup-wrapper h1 {
   text-align: center;
@@ -268,4 +279,15 @@ width: 100%;
     box-shadow: 10px 7px 10px 6px rgba(22, 20, 20, 0.8);
     margin: auto;
   }
+}
+
+.podcasts-flex {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.carousel-item {
+  display: flex; /* or grid */
+  justify-content: center;
 }

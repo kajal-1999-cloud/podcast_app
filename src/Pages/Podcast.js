@@ -7,6 +7,9 @@ import { setPodcasts } from "../slices/podcastSlice";
 import PodcastCard from "../Components/Podcasts/PodcastCard";
 import MostPopular from "../Components/Podcasts/MostPopular/MostPopular";
 import InputComponent from "../Components/common/Input";
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+
 
 function PodcastsPage() {
   const dispatch = useDispatch();
@@ -84,7 +87,7 @@ function PodcastsPage() {
     <div  className="podcastCards">
     {filteredPodcasts.length > 0 ? (
         <div className="podcasts-flex" style={{ marginTop: "1.5rem" }}>
-          {filteredPodcasts?.map((item) => {
+          {filteredPodcasts?.slice(0, 4).map((item) => {
             return (
              <>
               <PodcastCard
@@ -107,30 +110,52 @@ function PodcastsPage() {
        
     </div>
      </div>
-     {/* <div>
+     <div className="popular-podcast">
       <h1>POPULAR PODCAST</h1>
-     {popularData.length > 0 ? (
-              <>
-                {popularData.map((episode, index) => {
-                  return (
-                    <MostPopular
-                      key={index}
-                      index={index + 1}
-                      title={episode.title.toUpperCase()}
-                      description={episode.description}
-                      audioFile={episode.audioFile}
-                      onClick={(file) => setPlayingFile(file)}
-                    />
-                  );
-                })}
-              </>
-            ) : (
-              <p>No popularData</p>
-            )}
-     </div> */}
+      {filteredPodcasts.length > 0 ? (
+        <div className="podcasts-flex" style={{ marginTop: "1.5rem" }}>
+          {filteredPodcasts?.slice(4).map((item) => {
+            return (
+             <>
+              <PodcastCard
+                key={item.id}
+                id={item.id}
+                title={item.title}
+                displayImage={item.displayImage}
+              />
+             </>
+              
+            );
+          })}
+
+        </div>
+      ) : (
+        <p>No popularData</p>
+      )}
+   
+     </div>
     </div>
   </div>
 );
 }
 
+const responsive = {
+  superLargeDesktop: {
+    // the naming can be any, depends on you.
+    breakpoint: { max: 4000, min: 3000 },
+    items: 5
+  },
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 3
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1
+  }
+};
 export default PodcastsPage;

@@ -68,10 +68,10 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/podcasts" element={<PodcastPage />} />
           <Route path="/podcast/:id" element={<PodcastDetails />} />
+          <Route path="/create-a-podcast" element={<CreateAPodcastPage />} />
 
           <Route element={<PrivateRoutes />}>
             <Route path="/profile/:id" element={<Profile />} />
-            <Route path="/create-a-podcast" element={<CreateAPodcastPage />} />
             <Route path="/podcast/:id/create-episode"  element={<CreateAnEpisodePage />}
             />
           </Route>
