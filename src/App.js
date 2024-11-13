@@ -66,14 +66,13 @@ function App() {
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/podcasts" element={<PodcastPage />} />
+          <Route path="/podcast/:id" element={<PodcastDetails />} />
+
           <Route element={<PrivateRoutes />}>
             <Route path="/profile/:id" element={<Profile />} />
             <Route path="/create-a-podcast" element={<CreateAPodcastPage />} />
-            <Route path="/podcasts" element={<PodcastPage />} />
-            <Route path="/podcast/:id" element={<PodcastDetails />} />
-            <Route
-              path="/podcast/:id/create-episode"
-              element={<CreateAnEpisodePage />}
+            <Route path="/podcast/:id/create-episode"  element={<CreateAnEpisodePage />}
             />
           </Route>
         </Routes>

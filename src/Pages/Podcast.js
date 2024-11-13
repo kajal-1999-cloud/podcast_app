@@ -84,7 +84,7 @@ function PodcastsPage() {
     <div  className="podcastCards">
     {filteredPodcasts.length > 0 ? (
         <div className="podcasts-flex" style={{ marginTop: "1.5rem" }}>
-          {filteredPodcasts.map((item) => {
+          {filteredPodcasts?.map((item) => {
             return (
              <>
               <PodcastCard
