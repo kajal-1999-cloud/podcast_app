@@ -32,7 +32,12 @@ const SignUpForm = () => {
   const handleSignUp = async () => {
     setLoading(true);
     console.log("handle sign up");
-
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      toast.error("Please provide a valid email address.");
+      setLoading(false);
+      return;
+    }
     if (
       password === confPass &&
       password.length >= 6 &&
@@ -81,7 +86,20 @@ const SignUpForm = () => {
         setLoading(false);
       }
     } else {
-      if (password !== confPass) {
+
+
+      
+    if (!FullName || !email || !password || !confPass ) {
+      toast.error("All fields are required.");
+      setLoading(false);
+      return;
+    }
+    if(!profilePhoto){
+      toast.error("please upload a profile photo");
+      setLoading(false);
+      return;
+    }
+     else if (password !== confPass) {
         toast.error(
           "Please Make Sure your password and Confirm Password matches!"
         );
