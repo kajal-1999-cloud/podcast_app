@@ -47,9 +47,7 @@
   line-height: 50px;
 
   }
-  .photoDiv{
-    text-align: center;
-  }
+
 .profileText .user{
   text-align: center;
   gap: 20px;
@@ -58,14 +56,24 @@
   margin: 10px;
   width: 50%;
 }
-.profilePhoto{
+.photoDiv{
+  text-align: center;
   width: 100px;
-  width: 100%;
   height: 100px;
   border-radius: 50%;
   border: 1px solid white;
-  margin: 5px;
   box-shadow: 0px 10px 17px  rgba(214, 216, 231, 0.788);
+  overflow: hidden;
+z-index: 200;
+}
+.profilePhoto{
+  width: 100px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  object-position:center;
+  overflow: hidden;
+  margin: 5px;
 
   } 
  
