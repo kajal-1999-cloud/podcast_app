@@ -6,8 +6,6 @@ import { FaPlayCircle } from "react-icons/fa";
 // import { GoTriangleRight } from "react-icons/go";
 
 function MostPopular({ index, title, description, audioFile, onClick }) {
-
-
   
   return (
    <div className="mostPopular">

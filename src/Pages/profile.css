@@ -1,6 +1,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 
+
+.profile{
+}
 .profileText {
   text-align: center;
   /* margin-top: 30px; */
@@ -30,13 +33,15 @@
   border-radius: 10px;
   box-shadow: 0px -5px 0px  rgba(85, 94, 158, 0.788);
  margin:20px;
+ zoom: .8;
+
 }
 .profileText .heading{
     margin-bottom: 30px;
   word-spacing: 15px;
   padding: 3px 50%;
     border-radius: 20px;
-  /* color: white; */
+ zoom: .9;
   box-shadow: 0px 10px 17px  rgba(7, 15, 78, 0.788);
   font-weight: 500;
   line-height: 50px;

@@ -8,11 +8,11 @@ import "./style.css";
 import "./profile.css";
 import { useParams } from "react-router-dom";
 import { doc, getDoc } from "firebase/firestore";
+
 const Profile = () => {
   const { id } = useParams();
-
   const [users, setUsers] = useState({});
-
+  
   const getData = async () => {
     try {
       const docRef = doc(db, "users", id);
@@ -53,18 +53,16 @@ const Profile = () => {
   return (
     <div className="profile">
       <Header />
-
       <div className="profileText">
         <h3 className="heading">USER PROFILE</h3>
-<div className="photoDiv" >
-<img className="profilePhoto" src={users.profileImage} alt="img..." />
-
-</div>
+        <div className="photoDiv">
+          <img className="profilePhoto" src={users.profileImage} alt="img..." />
+        </div>
         <div className="user">
-          {users.name && <h4 className="name"> USERNAME: {users.name.toUpperCase()}</h4>}
-            <h4> Email-ID: {users.email}</h4>
-
-         
+          {users.name && (
+            <h4 className="name"> USERNAME: {users.name.toUpperCase()}</h4>
+          )}
+          <h4> Email-ID: {users.email}</h4>
         </div>
 
         <button text={"logout"} onClick={handleLogout} className="btnChnge">
