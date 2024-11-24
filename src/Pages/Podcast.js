@@ -63,13 +63,10 @@ function PodcastsPage() {
   }, []);
 
   console.log("populr",popularData)
-  
-
   var filteredPodcasts = podcasts.filter(
     (item) =>
       item.title.trim().toLowerCase().includes(search.trim().toLowerCase())
   );
-
 
   return (
     <div className="podcast">
@@ -117,7 +114,7 @@ function PodcastsPage() {
           {filteredPodcasts?.slice(4).map((item) => {
             return (
              <>
-              <PodcastCard
+              <MostPopular
                 key={item.id}
                 id={item.id}
                 title={item.title}

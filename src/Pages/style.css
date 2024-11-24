@@ -94,11 +94,9 @@ color: #fad0a1;
 }
 .podcastCards {
   zoom: .9;
-  /* height: 300px; */
-  /* overflow-y: scroll; */
-  /* scrollbar-width: thin; */
- 
+margin: auto;
   display: flex;
+justify-content: space-around;
 }
 
 .popular-podcast{
@@ -137,9 +135,7 @@ color: #fad0a1;
   align-items: center;
   justify-content: center;
 }
-.signup-page{
 
-}
 .signup-wrapper {
   display: flex;
   flex-direction: column;
@@ -282,11 +278,16 @@ width: 100%;
 }
 
 .podcasts-flex {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  /* display: grid; */
+  /* grid-template-columns: repeat(4, 1fr); */
   gap: 1rem;
 }
-
+.podcasts-flex img{
+  /* border: 1px solid red; */
+  /* width: 200px; */
+  /* height: 170px; */
+  border-radius:10% ;
+}
 .carousel-item {
   display: flex; /* or grid */
   justify-content: center;

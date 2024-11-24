@@ -1,13 +1,13 @@
 .popular-details{
- display: flex;
- justify-content: space-between;
-    align-items: center;
-    background-color: rgb(43, 41, 41);
-  background-color: rgb(17, 17, 17);
-    padding: 0.1rem 1rem;
-    opacity: 0.9;
-    margin: .8rem;
-    color: rgb(214, 212, 212);
+ /* display: flex; */
+ /* justify-content: space-between; */
+    /* align-items: center; */
+    /* background-color: rgb(43, 41, 41); */
+  /* background-color: rgb(17, 17, 17); */
+    /* padding: 0.1rem 1rem; */
+    /* opacity: 0.9; */
+    /* margin: .8rem; */
+    /* color: rgb(214, 212, 212); */
 
 }
 .popular-details:hover{
@@ -32,5 +32,32 @@
 }
 .mostPopular{
     margin:0.3rem 3rem;
-    margin-right: 12rem;
+    /* margin-right: 12rem; */
 }
+
+
+.popular-card {
+    /* width: 250px; */
+    /* min-height: 250px; */
+   
+    padding: 0.5rem;
+    opacity: 0.7;
+    cursor: pointer;
+  }
+.popular-card img{
+  border-radius: 50%;
+width: 170px;
+height: 170px;
+}
+
+  
+  .popular-card:hover {
+    opacity: 1;
+    transition: all 0.3s;
+  }
+  
+  .popular-title {
+    color: var(--white) !important;
+    text-decoration: none !important;
+    margin: 0.5rem 0rem;
+  }

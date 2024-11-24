@@ -4,9 +4,12 @@ import image from "../assets/chris-lynch-Qruwi3Ur3Ak-unsplash.jpg";
 import logo from "../assets/logo.png";
 import signupPage from "../Pages/SignUpPage";
 import { useNavigate } from "react-router-dom";
+import { auth } from "../firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 function Home() {
   const navigate = useNavigate();
+  const [user, loading, error] = useAuthState(auth);
 
   function signupPage(){
     navigate('/signup')
@@ -24,7 +27,7 @@ function Home() {
           <div className="para">
           <div className="logo-name">
             <img className="logo" src={logo} alt="" />
-            <h4>HighWaves</h4>
+            <h4 onClick={()=> user && navigate('/podcasts') } style={{cursor:"pointer"}}>HighWaves</h4>
           </div><br/>
             {/* <p>Unleash your creativity with our podcast platform! 🎙️ </p>{" "}
           <p>Create captivating podcasts and craft engaging episodes daily </p>
@@ -40,9 +43,10 @@ function Home() {
               Explore the art of storytelling or amplify your voice
               experience 🎼
             </p> <br />
-  <button onClick={()=> signupPage()} >Click here
+ 
+ {!user &&  <button onClick={()=> signupPage()} >Click here
       
-     </button>
+      </button> }
           </div>
         </div>
       </div>
