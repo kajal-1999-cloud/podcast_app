@@ -6,7 +6,6 @@ import { FaPlayCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 function MostPopular({ id, title, displayImage, username }) {
-  
   return (
     <Link to={`/podcast/${id}`}>
    <div className="mostPopular">
@@ -18,5 +17,4 @@ function MostPopular({ id, title, displayImage, username }) {
    </Link>
   );
 }
-
 export default MostPopular;
