@@ -187,8 +187,6 @@ input:-webkit-autofill:active {
   transition: all 0.2s;
 }
 
-
-
 .podcastDetails .podcastDescription{
 background-color: rgba(16, 39, 75, 0.938);
 opacity: 0.9;
